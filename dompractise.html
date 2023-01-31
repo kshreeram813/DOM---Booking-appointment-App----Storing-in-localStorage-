@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        form {
+           background-color: yellowgreen;
+            text-align: center;
+        }
+
+    input{
+        font-size:30px;
+        color:rebeccapurple;
+        width:400px;
+    }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align:center;">Booking appointment App AND Storing in localStorage </h1> <br>
+
+    <form  onSubmit="saveToLocalStorage(event)">
+    <label>Name</label> <br>
+    <input type="text" id="username" required><br>
+    <label>Email</label><br>
+    <input type="email" id="email" required><br>
+    <label>phone</label><br>
+    <input type="number" id="phone" required><br>
+    <button> Submit </button>  
+    <br>
+    </form>
+
+    <script>
+        function saveToLocalStorage(event)
+        {
+            event.preventDefault();
+            let name1 = event.target.username.value;
+            let email1 = event.target.email.value;
+            let phone1 = event.target.phone.value;
+
+            localStorage.setItem('NAME',name1);
+            localStorage.setItem('EMAIL',email1);
+            localStorage.setItem('PHONE',phone1);
+        }
+    </script>
+
+</body>
+
+</html>
